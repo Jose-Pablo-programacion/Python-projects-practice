@@ -1,0 +1,6 @@
+Nombre: jose
+Telefono: 121212121
+
+Nombre: juan
+Telefono: 123234433
+
