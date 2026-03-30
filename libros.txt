@@ -1,0 +1,10 @@
+Titulo: inversor inteligente
+Autor: ben grahamm
+Año: 1949
+Leido: Si
+
+Titulo: harry potter y la piedra filosofal
+Autor: jk rowling
+Año: 1997
+Leido: Si
+
