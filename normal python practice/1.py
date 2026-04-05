@@ -11,4 +11,4 @@ if edad < 18:
 if edad >= 18 and edad < 26:
     print('Eres joven')
 if edad >= 26:
-    print('Ya eres un adulto veterano 😂')
+    print('Ya eres un adulto veterano ')

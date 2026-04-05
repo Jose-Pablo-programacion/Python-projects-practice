@@ -1,0 +1,76 @@
+Inicio 
+
+agregamos librería para saber hora en tiempo real
+    mientras sea verdadero:
+
+               Jarvis recibe el texto del usuario
+
+               jarvis convierte texto a minusculas
+
+               jarvis elimina espacios al inicio y al final
+
+              si jarvis recibe hola:
+                      jarvis regresa hola bro
+
+              si jarvis recibe como estas:
+                       jarvis regresa bien,gracias por preguntar
+
+              si jarvis recibe adios:
+                       jarvis regresa adios,hasta pronto
+                       jarvis finaliza
+
+	      si jarvis recibe buenos días o buenos días jarvis:
+			jarvis regresa buenos días 
+
+	      si jarvis recibe buenas noches o buenas noches jarvis
+			jarvis regresa buenas noches
+
+	      si jarvis recibe buenas tardes o buenas tardes jarvis
+			jarvis regresa buenas tardes
+
+	      si jarvis recibe dame la hora o que hora es o hora actual o hora:
+                  jarvis regresa la hora en tiempo real llamando a la librería
+
+	      si cuanto es esta en jarvis o jarvis cuanto es esta dentro de jarvis o dame el resultado de esta dentro de jarvis o jarvis dame el resultado de esta dentro de jarvis o calcula esta dentro de jarvis o jarvis cacula esta dentro de jarvis:
+			se guarda lo que regresa calculadora en resultado
+			si resultado no es none:
+				jarvis regresa el resultado 
+		si + esta dentro de jarvis o - esta dentro de jarvis o * esta dentro de jarvis o / esta dentro de jarvis:
+			
+			se guarda lo que regresa calculadora en resultado
+			si resultado no es none:
+				jarvis regresa el resultado 
+               si jarvis recibe algo diferente:
+                     jarvis regresa no entiendo
+
+se crea una función para calculadora
+
+se crea lista números vacia
+se crea variable operador como cadena vacia
+se crea variable numero_actual como cadena vacia
+
+ para cada carácter en cadena:
+	si el carácter es digito:
+		se acumula el carácter actual en numero actual
+
+	si el carácter no es un digito y numero actual no esta vacio:
+		guardar numero actual en la lista de numeros
+		resetear numero actual a ""
+
+	si carácter es un operador (+,-,*,/):
+		el numero actual se guarda como el primer numero
+		se guarda el operador 
+		se resetea el numero actual a ""
+
+ al terminar el para :
+	guarda el numero actual como segundo numero
+	hacer la operación depende del operador
+	en la divison , si el segundo numero es 0:
+				jarvis regresa no se puede dividir entre 0
+					regresa none
+	si no hay un operador:
+		jarvis regresa no se pudo realizar la operacion
+	regresar el resultado
+
+
+Fin
