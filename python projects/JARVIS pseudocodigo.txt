@@ -1,6 +1,8 @@
 Inicio 
 
-agregamos librería para saber hora en tiempo real
+agregamos librería para saber tiempo
+agregamos librería para random
+agregamos librería para abrir un link del navegador predeterminado
 se crea una lista con frases diferentes llamada frases_jarvis
     mientras sea verdadero:
 
@@ -50,6 +52,25 @@ se crea una lista con frases diferentes llamada frases_jarvis
 	       si jarvis recibe frase o dame una frase o jarvis dame una frase:
 			se elige una frase al azar de la lista frases_jarvis y se almacena en frase random
 			se imprime la frase random
+		
+	       si jarvis recibe abre google o jarvis abre google o google o abrir google o jarvis abrir Google:
+			jarvis abre el google con la librería para abrir el link y usamos el link hacia google
+
+               si jarvis recibe abre youtube o jarvis abre youtube o youtube o abrir youtube o jarvis abrir youtube:
+			jarvis abre el youtube con la librería para abrir el link y usamos el link hacia youtube
+		
+	       si jarvis recibe abre facebook o jarvis abre facebook o facebook o abrir facebook o jarvis abrir facebook:
+			jarvis abre el facebook con la librería para abrir el link y usamos el link hacia facebook
+
+	       si jarvis recibe abre whatsapp o jarvis abre whatsapp o whatsapp o abrir whatsapp o jarvis abrir whatsapp:
+			jarvis abre el whatsapp con la librería para abrir el link y usamos el link hacia whatsapp
+
+	       si jarvis recibe abre claude o jarvis abre claude o claude o abrir claude o jarvis abrir claude:
+			jarvis abre el claude con la librería para abrir el link y usamos el link hacia claude
+	
+	       si jarvis recibe abre classroom o jarvis abre classroom o classroom o abrir classroom o jarvis abrir classroom:
+			jarvis abre el classroom con la librería para abrir el link y usamos el link hacia classroom	       
+	       
 
 se crea una función para calculadora
 

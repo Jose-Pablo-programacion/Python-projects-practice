@@ -1,5 +1,6 @@
 import datetime
 import random
+import webbrowser
 
 def calculadora(cadena):
     numero_actual = ""
@@ -72,6 +73,19 @@ while True:
     elif JARVIS == "frase" or JARVIS == "dame una frase" or JARVIS == "jarvis dame una frase":
         frase_random = random.choice(frases_jarvis)
         print(frase_random)
+    elif JARVIS == "abre google" or JARVIS == "jarvis abre google" or JARVIS == "google" or JARVIS == "abrir google" or JARVIS == "jarvis abrir google":
+        webbrowser.open("https://www.google.com/?hl=es")
+    elif JARVIS == "abre youtube" or JARVIS == "jarvis abre youtube" or JARVIS == "youtube" or JARVIS == "abrir youtube" or JARVIS == "jarvis abrir youtube":
+        webbrowser.open("https://www.youtube.com/")
+    elif JARVIS == "abre facebook" or JARVIS == "jarvis abre facebook" or JARVIS == "facebook" or JARVIS == "abrir facebook" or JARVIS == "jarvis abrir facebook":
+        webbrowser.open("https://www.facebook.com/")
+    elif JARVIS == "abre whatsapp" or JARVIS == "jarvis abre whatsapp" or JARVIS == "whatsapp" or JARVIS == "abrir whatsapp" or JARVIS == "jarvis abrir whatsapp":
+        webbrowser.open("https://www.whatsapp.com/?lang=es")
+    elif JARVIS == "abre claude" or JARVIS == "jarvis abre claude" or JARVIS == "claude" or JARVIS == "abrir claude" or JARVIS == "jarvis abrir claude":
+        webbrowser.open("https://claude.ai/new")
+    elif JARVIS == "abre classroom" or JARVIS == "jarvis abre classroom" or JARVIS == "classroom" or JARVIS == "abrir classroom" or JARVIS == "jarvis abrir classroom":
+        webbrowser.open("https://classroom.google.com/u/1/")
     else:
         print("No entiendo :(")
+
 
