@@ -1,7 +1,7 @@
 import datetime
+import random
 
 def calculadora(cadena):
-    numeros = []
     numero_actual = ""
     operador = ""
     for caracter in cadena:
@@ -9,7 +9,6 @@ def calculadora(cadena):
             numero_actual += caracter
         if not caracter.isdigit() and numero_actual:
             a = numero_actual
-            numeros.append(numero_actual)
             numero_actual = ""
         if caracter == "+" or caracter == "-" or caracter == "*" or caracter == "/":
             operador = caracter
@@ -35,6 +34,13 @@ def calculadora(cadena):
     return resultado
 
 
+frases_jarvis = ["El ayer es historia, el mañana es un misterio, pero el hoy es un obsequio.","La mente es como un paracaídas, solo funciona si se abre.","No cuentes los días, haz que los días cuenten.",
+    "El éxito es la suma de pequeños esfuerzos repetidos día tras día.","Cae siete veces, levántate ocho.","La única forma de hacer un gran trabajo es amar lo que haces.",
+    "El dolor es temporal, el orgullo es para siempre.","No esperes el momento perfecto, toma el momento y hazlo perfecto.","Las grandes mentes discuten ideas, las mentes mediocres discuten eventos, las mentes pequeñas discuten personas.",
+    "La vida no se mide por las veces que respiras, sino por los momentos que te dejan sin aliento.","Si puedes soñarlo, puedes lograrlo.","El que no arriesga no gana.",
+    "La disciplina es el puente entre las metas y los logros.","No importa qué tan lento vayas, siempre y cuando no te detengas.","El fracaso es simplemente la oportunidad de comenzar de nuevo con más inteligencia.",
+    "Tu tiempo es limitado, no lo desperdicies viviendo la vida de alguien más.","La felicidad no es algo hecho, viene de tus propias acciones.",
+    "El secreto del éxito es constancia en el propósito.","El talento sin trabajar duro es nada."]
 
 while True:
     JARVIS = input("Dile algo a JARVIS:").lower().strip()
@@ -61,6 +67,11 @@ while True:
         resultado = calculadora(JARVIS)
         if resultado is not None:
             print(resultado)
+    elif JARVIS == "fecha" or JARVIS == "dame la fecha" or JARVIS == "jarvis dame la fecha actual" or JARVIS == "jarvis dame la fecha" or JARVIS == "fecha actual":
+        print(datetime.datetime.now().strftime("%d/%m/%Y"))
+    elif JARVIS == "frase" or JARVIS == "dame una frase" or JARVIS == "jarvis dame una frase":
+        frase_random = random.choice(frases_jarvis)
+        print(frase_random)
     else:
         print("No entiendo :(")
 

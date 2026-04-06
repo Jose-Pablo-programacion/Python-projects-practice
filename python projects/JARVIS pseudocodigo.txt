@@ -1,6 +1,7 @@
 Inicio 
 
 agregamos librería para saber hora en tiempo real
+se crea una lista con frases diferentes llamada frases_jarvis
     mientras sea verdadero:
 
                Jarvis recibe el texto del usuario
@@ -29,7 +30,7 @@ agregamos librería para saber hora en tiempo real
 			jarvis regresa buenas tardes
 
 	      si jarvis recibe dame la hora o que hora es o hora actual o hora:
-                  jarvis regresa la hora en tiempo real llamando a la librería
+                  jarvis regresa la hora en tiempo real mediante el uso de la librería
 
 	      si cuanto es esta en jarvis o jarvis cuanto es esta dentro de jarvis o dame el resultado de esta dentro de jarvis o jarvis dame el resultado de esta dentro de jarvis o calcula esta dentro de jarvis o jarvis cacula esta dentro de jarvis:
 			se guarda lo que regresa calculadora en resultado
@@ -43,9 +44,15 @@ agregamos librería para saber hora en tiempo real
                si jarvis recibe algo diferente:
                      jarvis regresa no entiendo
 
+	       si jarvis recibe fecha o dame la fecha o jarvis dame la fecha actual o jarvis dame la fecha o fecha actual:
+		     jarvis regresa la fecha actual mediante el uso de la libreria datetime 
+	       
+	       si jarvis recibe frase o dame una frase o jarvis dame una frase:
+			se elige una frase al azar de la lista frases_jarvis y se almacena en frase random
+			se imprime la frase random
+
 se crea una función para calculadora
 
-se crea lista números vacia
 se crea variable operador como cadena vacia
 se crea variable numero_actual como cadena vacia
 
@@ -54,7 +61,6 @@ se crea variable numero_actual como cadena vacia
 		se acumula el carácter actual en numero actual
 
 	si el carácter no es un digito y numero actual no esta vacio:
-		guardar numero actual en la lista de numeros
 		resetear numero actual a ""
 
 	si carácter es un operador (+,-,*,/):
