@@ -1,6 +1,7 @@
 import datetime
 import random
 import webbrowser
+import pyttsx3
 
 def calculadora(cadena):
     numero_actual = ""
@@ -34,6 +35,12 @@ def calculadora(cadena):
     
     return resultado
 
+def jarvis_hablando(texto):
+    engine = pyttsx3.init()
+    engine.say(texto)
+    engine.runAndWait()
+    print(texto)
+
 
 frases_jarvis = ["El ayer es historia, el mañana es un misterio, pero el hoy es un obsequio.","La mente es como un paracaídas, solo funciona si se abre.","No cuentes los días, haz que los días cuenten.",
     "El éxito es la suma de pequeños esfuerzos repetidos día tras día.","Cae siete veces, levántate ocho.","La única forma de hacer un gran trabajo es amar lo que haces.",
@@ -46,50 +53,61 @@ frases_jarvis = ["El ayer es historia, el mañana es un misterio, pero el hoy es
 while True:
     JARVIS = input("Dile algo a JARVIS(escribir ayuda para poder ver comandos validos):").lower().strip()
     if JARVIS == "hola" or JARVIS == "hola jarvis":
-        print("Hola bro")
+        jarvis_hablando("Hola,que tal")
     elif JARVIS == "como estas" or JARVIS == "como estas jarvis":
-        print("Bien, gracias por preguntar")
+        jarvis_hablando("Bien, gracias por preguntar")
     elif JARVIS == "adios" or JARVIS == "adios jarvis":
-        print("Adios,hasta pronto")
+        jarvis_hablando("Adios, hasta pronto")
         break
-    elif JARVIS == "dame la hora" or JARVIS == "que hora es" or JARVIS == "Hora actual" or JARVIS == "hora" or JARVIS == "dame la hora jarvis" or JARVIS == "que hora es jarvis":
-        print(datetime.datetime.now().strftime("%H:%M"))
+    elif JARVIS == "dame la hora" or JARVIS == "que hora es" or JARVIS == "Hora actual" or JARVIS == "hora" or JARVIS == "dame la hora jarvis" or JARVIS == "que hora es jarvis" or JARVIS == "jarvis dame la hora":
+        jarvis_hablando(f"Son las {datetime.datetime.now().strftime("%H:%M")}")#validar que diga es la 1 en vez de son las 1
     elif JARVIS == "buenos dias" or JARVIS == "buenos dias jarvis":
-        print("Buenos dias")
+        jarvis_hablando("Buenos dias")
     elif JARVIS == "buenas tardes" or JARVIS == "buenas tardes jarvis":
-        print("Buenas tardes")
+        jarvis_hablando("Buenas tardes")
     elif JARVIS == "buenas noches" or JARVIS == "buenas noches jarvis":
-        print("Buenas noches")
+        jarvis_hablando("Buenas noches")
     elif "cuanto es" in JARVIS or "jarvis cuanto es" in JARVIS or "dame el resultado de" in JARVIS or "jarvis dame el resultado de" in JARVIS or "calcula" in JARVIS or "jarvis calcula" in JARVIS:
         resultado = calculadora(JARVIS)
         if resultado is not None:
-            print(resultado)
+            jarvis_hablando(f"El resultado es {resultado}")#error si solo dejo como parametro resultado
     elif "+" in JARVIS or "-" in JARVIS or "*" in JARVIS or "/" in JARVIS:
         resultado = calculadora(JARVIS)
         if resultado is not None:
-            print(resultado)
+            jarvis_hablando(f"El resultado es {resultado}")#error si solo dejo como parametro resultado
     elif JARVIS == "fecha" or JARVIS == "dame la fecha" or JARVIS == "jarvis dame la fecha actual" or JARVIS == "jarvis dame la fecha" or JARVIS == "fecha actual":
-        print(datetime.datetime.now().strftime("%d/%m/%Y"))
+        jarvis_hablando(f"La fecha es {datetime.datetime.now().strftime("%d/%m/%Y")}")
     elif JARVIS == "frase" or JARVIS == "dame una frase" or JARVIS == "jarvis dame una frase":
         frase_random = random.choice(frases_jarvis)
-        print(frase_random)
+        jarvis_hablando(frase_random)
     elif JARVIS == "abre google" or JARVIS == "jarvis abre google" or JARVIS == "google" or JARVIS == "abrir google" or JARVIS == "jarvis abrir google":
+        jarvis_hablando("Abriendo google")
         webbrowser.open("https://www.google.com/?hl=es")
+        jarvis_hablando("Google  abierto  correctamente")
     elif JARVIS == "abre youtube" or JARVIS == "jarvis abre youtube" or JARVIS == "youtube" or JARVIS == "abrir youtube" or JARVIS == "jarvis abrir youtube":
+        jarvis_hablando("Abriendo youtube")
         webbrowser.open("https://www.youtube.com/")
+        jarvis_hablando("Youtube  abierto  correctamente")
     elif JARVIS == "abre facebook" or JARVIS == "jarvis abre facebook" or JARVIS == "facebook" or JARVIS == "abrir facebook" or JARVIS == "jarvis abrir facebook":
+        jarvis_hablando("Abriendo facebook")
         webbrowser.open("https://www.facebook.com/")
+        jarvis_hablando("Facebook  abierto  correctamente")
     elif JARVIS == "abre whatsapp" or JARVIS == "jarvis abre whatsapp" or JARVIS == "whatsapp" or JARVIS == "abrir whatsapp" or JARVIS == "jarvis abrir whatsapp":
+        jarvis_hablando("Abriendo whatsapp")
         webbrowser.open("https://www.whatsapp.com/?lang=es")
+        jarvis_hablando("Whatsapp  abierto  correctamente")
     elif JARVIS == "abre claude" or JARVIS == "jarvis abre claude" or JARVIS == "claude" or JARVIS == "abrir claude" or JARVIS == "jarvis abrir claude":
+        jarvis_hablando("Abriendo claude")
         webbrowser.open("https://claude.ai/new")
+        jarvis_hablando("Claude  abierto  correctamente")
     elif JARVIS == "abre classroom" or JARVIS == "jarvis abre classroom" or JARVIS == "classroom" or JARVIS == "abrir classroom" or JARVIS == "jarvis abrir classroom":
+        jarvis_hablando("Abriendo classroom")
         webbrowser.open("https://classroom.google.com/u/1/")
+        jarvis_hablando("Classroom  abierto  correctamente")
     elif JARVIS == "ayuda" or JARVIS == "comandos validos" or JARVIS == "comandos" or JARVIS == "comandos de ayuda" or JARVIS == "comandos de jarvis":
         print("decir hola->hola jarvis\ndecir como estas->como estas jarvis\ndecir adios->adios jarvis\nobtener la hora actual->jarvis dame la hora\ndecir buenos dias->buenos dias jarvis\ndecir buenos dias->buenos dias jarvis")
         print("decir buenas tardes->buenas tardes jarvis\ndecir buenas noches->buenas noches jarvis\nsuma->ejemplo(jarvis cuanto es 5+3)\nresta->ejemplo(jarvis cuanto es 5-3)\nmultiplicacion->ejemplo(jarvis cuanto es 5*3)\ndivision->ejemplo(jarvis cuanto es 5/3)")    
         print("obtener la fecha actual->jarvis dame la fecha actual\nfrase profunda->jarvis dame una frase\nabrir google->jarvis abre google\nabrir youtube->jarvis abre youtube\nabrir facebook->jarvis abre facebook\nabrir whatsapp->jarvis abre whatsapp")
         print("abrir claude->jarvis abre claude\nabrir classroom->jarvis abre classroom\n")
     else:
-        print("No entiendo :(")
-
+        jarvis_hablando("No entiendo :(")
