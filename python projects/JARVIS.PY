@@ -44,15 +44,15 @@ frases_jarvis = ["El ayer es historia, el mañana es un misterio, pero el hoy es
     "El secreto del éxito es constancia en el propósito.","El talento sin trabajar duro es nada."]
 
 while True:
-    JARVIS = input("Dile algo a JARVIS:").lower().strip()
-    if JARVIS == "hola":
+    JARVIS = input("Dile algo a JARVIS(escribir ayuda para poder ver comandos validos):").lower().strip()
+    if JARVIS == "hola" or JARVIS == "hola jarvis":
         print("Hola bro")
-    elif JARVIS == "como estas":
+    elif JARVIS == "como estas" or JARVIS == "como estas jarvis":
         print("Bien, gracias por preguntar")
-    elif JARVIS == "adios":
+    elif JARVIS == "adios" or JARVIS == "adios jarvis":
         print("Adios,hasta pronto")
         break
-    elif JARVIS == "dame la hora" or JARVIS == "que hora es" or JARVIS == "Hora actual" or JARVIS == "hora":
+    elif JARVIS == "dame la hora" or JARVIS == "que hora es" or JARVIS == "Hora actual" or JARVIS == "hora" or JARVIS == "dame la hora jarvis" or JARVIS == "que hora es jarvis":
         print(datetime.datetime.now().strftime("%H:%M"))
     elif JARVIS == "buenos dias" or JARVIS == "buenos dias jarvis":
         print("Buenos dias")
@@ -85,7 +85,11 @@ while True:
         webbrowser.open("https://claude.ai/new")
     elif JARVIS == "abre classroom" or JARVIS == "jarvis abre classroom" or JARVIS == "classroom" or JARVIS == "abrir classroom" or JARVIS == "jarvis abrir classroom":
         webbrowser.open("https://classroom.google.com/u/1/")
+    elif JARVIS == "ayuda" or JARVIS == "comandos validos" or JARVIS == "comandos" or JARVIS == "comandos de ayuda" or JARVIS == "comandos de jarvis":
+        print("decir hola->hola jarvis\ndecir como estas->como estas jarvis\ndecir adios->adios jarvis\nobtener la hora actual->jarvis dame la hora\ndecir buenos dias->buenos dias jarvis\ndecir buenos dias->buenos dias jarvis")
+        print("decir buenas tardes->buenas tardes jarvis\ndecir buenas noches->buenas noches jarvis\nsuma->ejemplo(jarvis cuanto es 5+3)\nresta->ejemplo(jarvis cuanto es 5-3)\nmultiplicacion->ejemplo(jarvis cuanto es 5*3)\ndivision->ejemplo(jarvis cuanto es 5/3)")    
+        print("obtener la fecha actual->jarvis dame la fecha actual\nfrase profunda->jarvis dame una frase\nabrir google->jarvis abre google\nabrir youtube->jarvis abre youtube\nabrir facebook->jarvis abre facebook\nabrir whatsapp->jarvis abre whatsapp")
+        print("abrir claude->jarvis abre claude\nabrir classroom->jarvis abre classroom\n")
     else:
         print("No entiendo :(")
-
 

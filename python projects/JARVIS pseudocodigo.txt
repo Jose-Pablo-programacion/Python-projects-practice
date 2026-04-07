@@ -12,27 +12,27 @@ se crea una lista con frases diferentes llamada frases_jarvis
 
                jarvis elimina espacios al inicio y al final
 
-              si jarvis recibe hola:
+              si jarvis recibe hola o hola jarvis:
                       jarvis regresa hola bro
 
-              si jarvis recibe como estas:
+              si jarvis recibe como estas o como estas jarvis:
                        jarvis regresa bien,gracias por preguntar
 
-              si jarvis recibe adios:
+              si jarvis recibe adios o adios jarvis:
                        jarvis regresa adios,hasta pronto
                        jarvis finaliza
+	
+	      si jarvis recibe dame la hora o que hora es u hora actual u hora u hora actual jarvis o que hora es jarvis:
+                  jarvis regresa la hora en tiempo real mediante el uso de la librería
 
 	      si jarvis recibe buenos días o buenos días jarvis:
 			jarvis regresa buenos días 
 
-	      si jarvis recibe buenas noches o buenas noches jarvis
-			jarvis regresa buenas noches
-
 	      si jarvis recibe buenas tardes o buenas tardes jarvis
 			jarvis regresa buenas tardes
-
-	      si jarvis recibe dame la hora o que hora es o hora actual o hora:
-                  jarvis regresa la hora en tiempo real mediante el uso de la librería
+		
+	      si jarvis recibe buenas noches o buenas noches jarvis
+			jarvis regresa buenas noches
 
 	      si cuanto es esta en jarvis o jarvis cuanto es esta dentro de jarvis o dame el resultado de esta dentro de jarvis o jarvis dame el resultado de esta dentro de jarvis o calcula esta dentro de jarvis o jarvis cacula esta dentro de jarvis:
 			se guarda lo que regresa calculadora en resultado
@@ -43,8 +43,6 @@ se crea una lista con frases diferentes llamada frases_jarvis
 			se guarda lo que regresa calculadora en resultado
 			si resultado no es none:
 				jarvis regresa el resultado 
-               si jarvis recibe algo diferente:
-                     jarvis regresa no entiendo
 
 	       si jarvis recibe fecha o dame la fecha o jarvis dame la fecha actual o jarvis dame la fecha o fecha actual:
 		     jarvis regresa la fecha actual mediante el uso de la libreria datetime 
@@ -69,10 +67,17 @@ se crea una lista con frases diferentes llamada frases_jarvis
 			jarvis abre el claude con la librería para abrir el link y usamos el link hacia claude
 	
 	       si jarvis recibe abre classroom o jarvis abre classroom o classroom o abrir classroom o jarvis abrir classroom:
-			jarvis abre el classroom con la librería para abrir el link y usamos el link hacia classroom	       
-	       
+			jarvis abre el classroom con la librería para abrir el link y usamos el link hacia classroom	 
+	
+	       si jarvis recibe ayuda o comandos validos o comandos o comandos de ayuda o comandos de jarvis:
+			jarvis regresa todos los comandos validos  
+   
+	       si jarvis recibe algo diferente:
+                     jarvis regresa no entiendo :(
 
-se crea una función para calculadora
+
+
+se crea una función para calculadora que recibe lo que se le dijo a jarvis
 
 se crea variable operador como cadena vacia
 se crea variable numero_actual como cadena vacia
