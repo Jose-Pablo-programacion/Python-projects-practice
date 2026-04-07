@@ -70,11 +70,11 @@ while True:
     elif "cuanto es" in JARVIS or "jarvis cuanto es" in JARVIS or "dame el resultado de" in JARVIS or "jarvis dame el resultado de" in JARVIS or "calcula" in JARVIS or "jarvis calcula" in JARVIS:
         resultado = calculadora(JARVIS)
         if resultado is not None:
-            jarvis_hablando(f"El resultado es {resultado}")#error si solo dejo como parametro resultado
+            jarvis_hablando(f"El resultado es {resultado}")
     elif "+" in JARVIS or "-" in JARVIS or "*" in JARVIS or "/" in JARVIS:
         resultado = calculadora(JARVIS)
         if resultado is not None:
-            jarvis_hablando(f"El resultado es {resultado}")#error si solo dejo como parametro resultado
+            jarvis_hablando(f"El resultado es {resultado}")
     elif JARVIS == "fecha" or JARVIS == "dame la fecha" or JARVIS == "jarvis dame la fecha actual" or JARVIS == "jarvis dame la fecha" or JARVIS == "fecha actual":
         jarvis_hablando(f"La fecha es {datetime.datetime.now().strftime("%d/%m/%Y")}")
     elif JARVIS == "frase" or JARVIS == "dame una frase" or JARVIS == "jarvis dame una frase":
