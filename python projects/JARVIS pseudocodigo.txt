@@ -4,12 +4,20 @@ agregamos librería para saber tiempo
 agregamos librería para random
 agregamos librería para abrir un link del navegador predeterminado
 agregamos librería para para poder decir el texto en voz alta
+se agrega la librería para reconocimiento de voz
+
+se inicializa el reconocedor
+se inicializa el microfono 
+se abre el microfono
+se ajusta el ruido ambiental solo una vez
 
 se crea una lista con frases diferentes llamada frases_jarvis
 
+jarvis le dice a traves de la función que habla en voz alta al usuario que jarvis esta listo, que necesita
+
     mientras sea verdadero:
 
-               Jarvis recibe el texto del usuario
+               Jarvis recibe lo que quiere decir el usuario, a través de la funcion de reconocimiento de voz
 
                jarvis convierte texto a minusculas
 
@@ -88,7 +96,7 @@ se crea una lista con frases diferentes llamada frases_jarvis
 	       si jarvis recibe ayuda o comandos validos o comandos o comandos de ayuda o comandos de jarvis:
 			jarvis regresa todos los comandos validos  
    
-	       si jarvis recibe algo diferente:
+	       si jarvis recibe algo diferente a una cadena vacia pero que no entendio:
                      se llama a la función en la que jarvis dice en voz alta el texto y se usa como parámetro No entiendo :(
 
 
@@ -114,7 +122,7 @@ se crea variable numero_actual como cadena vacia
 	guarda el numero actual como segundo numero
 	hacer la operación depende del operador
 	en la divison , si el segundo numero es 0:
-				jarvis regresa no se puede dividir entre 0
+				jarvis regresa en voz alta no se puede dividir entre 0
 					regresa none
 	si no hay un operador:
 		jarvis regresa no se pudo realizar la operacion
@@ -128,5 +136,13 @@ se ejecuta el motor y se espera a que termine
 se imprime el texto
 
 
+se crea una función de hablarle a jarvis
+	se le dice a jarvis el comando por microfono:
+		se captura el audio
+		si se entiende lo que se dijo:
+			se convierte el audio a texto
+			se regresa ese texto
+		si hay algún error o jarvis no entiende:
+			se regresa una cadena vacia
 
 Fin

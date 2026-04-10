@@ -2,6 +2,12 @@ import datetime
 import random
 import webbrowser
 import pyttsx3
+import speech_recognition as sr
+
+reconocedor = sr.Recognizer()
+microfono = sr.Microphone()
+with sr.Microphone() as fuente:
+    reconocedor.adjust_for_ambient_noise(fuente)
 
 def calculadora(cadena):
     numero_actual = ""
@@ -26,7 +32,7 @@ def calculadora(cadena):
         resultado = int(a) * int(b)
     elif operador == "/":
         if b== "0":
-            print("No se puede dividir entre 0")
+            jarvis_hablando("No se puede dividir entre 0")
             return None
         else:
             resultado = int(a) / int(b)
@@ -41,6 +47,14 @@ def jarvis_hablando(texto):
     engine.runAndWait()
     print(texto)
 
+def jarvis_escuchando():
+    with sr.Microphone() as fuente:
+        audio = reconocedor.listen(fuente)
+        try:
+            texto = reconocedor.recognize_google(audio,language="es-MX")
+            return texto
+        except:
+            return ""
 
 frases_jarvis = ["El ayer es historia, el mañana es un misterio, pero el hoy es un obsequio.","La mente es como un paracaídas, solo funciona si se abre.","No cuentes los días, haz que los días cuenten.",
     "El éxito es la suma de pequeños esfuerzos repetidos día tras día.","Cae siete veces, levántate ocho.","La única forma de hacer un gran trabajo es amar lo que haces.",
@@ -50,9 +64,10 @@ frases_jarvis = ["El ayer es historia, el mañana es un misterio, pero el hoy es
     "Tu tiempo es limitado, no lo desperdicies viviendo la vida de alguien más.","La felicidad no es algo hecho, viene de tus propias acciones.",
     "El secreto del éxito es constancia en el propósito.","El talento sin trabajar duro es nada."]
 
+jarvis_hablando("Jarvis preparado, que necesitas:")
 while True:
-    JARVIS = input("Dile algo a JARVIS(escribir ayuda para poder ver comandos validos):").lower().strip()
-    if JARVIS == "hola" or JARVIS == "hola jarvis":
+    JARVIS = jarvis_escuchando().lower().strip()
+    if JARVIS == "hola" or JARVIS == "hola jarvis":  #cambiar a "" in jarvis por temas de que no detecta bien la s
         jarvis_hablando("Hola,que tal")
     elif JARVIS == "como estas" or JARVIS == "como estas jarvis":
         jarvis_hablando("Bien, gracias por preguntar")
@@ -60,7 +75,7 @@ while True:
         jarvis_hablando("Adios, hasta pronto")
         break
     elif JARVIS == "dame la hora" or JARVIS == "que hora es" or JARVIS == "Hora actual" or JARVIS == "hora" or JARVIS == "dame la hora jarvis" or JARVIS == "que hora es jarvis" or JARVIS == "jarvis dame la hora":
-        jarvis_hablando(f"Son las {datetime.datetime.now().strftime("%H:%M")}")#validar que diga es la 1 en vez de son las 1
+        jarvis_hablando(f"Son las {datetime.datetime.now().strftime('%H:%M')}")#validar que diga es la 1 en vez de son las 1
     elif JARVIS == "buenos dias" or JARVIS == "buenos dias jarvis":
         jarvis_hablando("Buenos dias")
     elif JARVIS == "buenas tardes" or JARVIS == "buenas tardes jarvis":
@@ -76,7 +91,7 @@ while True:
         if resultado is not None:
             jarvis_hablando(f"El resultado es {resultado}")
     elif JARVIS == "fecha" or JARVIS == "dame la fecha" or JARVIS == "jarvis dame la fecha actual" or JARVIS == "jarvis dame la fecha" or JARVIS == "fecha actual":
-        jarvis_hablando(f"La fecha es {datetime.datetime.now().strftime("%d/%m/%Y")}")
+        jarvis_hablando(f"La fecha es {datetime.datetime.now().strftime('%d/%m/%Y')}")
     elif JARVIS == "frase" or JARVIS == "dame una frase" or JARVIS == "jarvis dame una frase":
         frase_random = random.choice(frases_jarvis)
         jarvis_hablando(frase_random)
@@ -109,5 +124,5 @@ while True:
         print("decir buenas tardes->buenas tardes jarvis\ndecir buenas noches->buenas noches jarvis\nsuma->ejemplo(jarvis cuanto es 5+3)\nresta->ejemplo(jarvis cuanto es 5-3)\nmultiplicacion->ejemplo(jarvis cuanto es 5*3)\ndivision->ejemplo(jarvis cuanto es 5/3)")    
         print("obtener la fecha actual->jarvis dame la fecha actual\nfrase profunda->jarvis dame una frase\nabrir google->jarvis abre google\nabrir youtube->jarvis abre youtube\nabrir facebook->jarvis abre facebook\nabrir whatsapp->jarvis abre whatsapp")
         print("abrir claude->jarvis abre claude\nabrir classroom->jarvis abre classroom\n")
-    else:
+    elif JARVIS != "":
         jarvis_hablando("No entiendo :(")
